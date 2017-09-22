@@ -1,0 +1,46 @@
+//Yeng, Charlie
+//cy5438
+//Tuesday 12pm
+//EE422C Assignment 1 Program 2//
+
+import java.util.Scanner;
+
+public class Program2 {
+    public static void main(String[] args) {
+//        Scanner scanner = new Scanner( System.in );
+//        String input = scanner.nextLine(); //can use input or method call
+        dollarWord("Garnishes wizards'''''' Wizards14534");
+    }
+
+    public static void dollarWord(String s) {
+        String words[] = s.split(" ");// puts words into array
+        int numWords = s.split(" ").length;
+        int sum = 0;
+
+        for (int i = 0; i <= numWords - 1; i++) {
+            for (int j = 0; j <= words[i].length() - 1; j++) {//calculates the value of each word
+                if((33 <= words[i].charAt(j)) && (words[i].charAt(j) <= 64)) {//checks if character is not a special value
+                    continue;
+                                                                             }
+                else if((91 <= words[i].charAt(j)) && (words[i].charAt(j) <= 96)){
+                    continue;
+                                                                                 }
+                else if ((97 <= words[i].charAt(j)) && (words[i].charAt(j) <= 122)) {
+                    sum += words[i].charAt(j) - 96;
+                                                                                    }
+                else if((65 <= words[i].charAt(j)) && (words[i].charAt(j) <= 90)){
+                    sum += words[i].charAt(j) - 64;
+                                                                                 }
+
+                                                            }
+            if(sum == 100){
+                System.out.print(words[i] + '\n');
+                sum = 0;
+                          }
+
+            else
+                sum = 0;
+                                                }
+                                             }
+
+                        }
